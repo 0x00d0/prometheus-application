@@ -1,0 +1,5 @@
+.vscode/
+.idea/
+vendor/
+.go-version
+.DS_Store

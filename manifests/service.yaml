@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-prometheus-app-svc
+  namespace: default
+  labels:
+    app: prometheus-discovery
+spec:
+  selector:
+    app: demo-prometheus
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 2112
+      name: metrics

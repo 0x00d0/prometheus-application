@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-prometheus-app
+  namespace: default
+  labels:
+    app: demo-prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-prometheus
+  template:
+    metadata:
+      labels:
+        app: demo-prometheus
+    spec:
+      containers:
+        - name: prometheus-application
+          image: registry.cn-hangzhou.aliyuncs.com/0x00000/prometheus-application:v0.0.1
+          ports:
+            - containerPort: 2112
